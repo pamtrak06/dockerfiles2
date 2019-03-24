@@ -10,11 +10,19 @@
 
 ## Build a local image
 
-This image is built under ubuntu 16.04 with last mapserver version compilation (currently today the 7.0.2 one !).
+This image is built under ubuntu 18.04 with last mapserver version compilation (currently the 7.2.2 !).
 ```
-$ git clone https://github.com/pamtrak06/mapserver7-ubuntu14.04.git
-$ cd mapserver7-ubuntu16.04
-$ docker build -t pamtrak06/mapserver7-ubuntu16.04:latest .
+$ git clone git@github.com:pamtrak06/dockerfiles2.git
+$ cd ubuntu/18.04/mapserver/7.2.2/
+$ docker build -t pamtrak06/ubuntu18.04-mapserver7:latest build
+```
+
+or 
+
+```
+$ git clone git@github.com:pamtrak06/dockerfiles2.git
+$ cd ubuntu/18.04/mapserver/7.2.2/
+$ docker-compose build
 ```
 
 ## Run container
