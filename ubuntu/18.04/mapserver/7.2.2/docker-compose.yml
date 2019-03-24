@@ -1,0 +1,6 @@
+version: '3.7'
+services:
+  ubuntu18.04-mapserver7:
+    image: pamtrak06/ubuntu18.04-mapserver7
+    build: build/
+

@@ -11,4 +11,4 @@ RUN wget https://download.gluster.org/pub/gluster/glusterfs/6/rsa.pub && \
 RUN echo deb https://download.gluster.org/pub/gluster/glusterfs/6/LATEST/Debian/stretch/amd64/apt/ stretch main > /etc/apt/sources.list.d/gluster.list
 RUN apt-get update -y && \
     apt-get install -y glusterfs-server
-
+CMD [ "service glusterd start" ]
