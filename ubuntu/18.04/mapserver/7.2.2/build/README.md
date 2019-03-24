@@ -28,7 +28,7 @@ $ docker-compose build
 ## Run container
 
 ```
-$ docker run -d -p 8989:80 -v <your local path to mapserver data>/data:/data pamtrak06/mapserver7-ubuntu16.04
+$ docker run -d -p 8080:80 -v $PWD/volumes/data:/data pamtrak06/ubuntu18.04-mapserver7
 ```
 
 Data are shared between host (/usr/local/mapserver/data) and container (/data).
@@ -56,9 +56,9 @@ export DOCKER_MACHINE_NAME="default"
 # eval "$(docker-machine env default)"
 ```
 
-Test win/mac install  : http://192.168.99.100:8989/cgi-bin/mapserv
+Test win/mac install  : http://192.168.99.100:8080/cgi-bin/mapserv
 
-Test lin install      : http://[host ip]:8989/cgi-bin/mapserv
+Test lin install      : http://[host ip]:8080/cgi-bin/mapserv
 
 ```
 No query information to decode. QUERY_STRING is set, but empty.
