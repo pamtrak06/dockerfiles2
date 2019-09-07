@@ -3,6 +3,23 @@ FROM jhipster/jhipster
 USER root
 
 # --------------------------------
+# Configure Java
+# --------------------------------
+ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+
+# --------------------------------
+# Install Maven 3
+# --------------------------------
+ARG MAVEN_VERSION=${MAVEN_VERSION:-3.6.2}
+ENV MAVEN_VERSION=${MAVEN_VERSION}
+ENV MAVEN_HOME=/usr/apache-maven-${MAVEN_VERSION}
+ENV PATH $PATH:${MAVEN_HOME}/bin
+RUN curl -sL http://archive.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz \
+  | gunzip \
+  | tar x -C /usr/ \
+  && ln -s ${MAVEN_HOME} /usr/maven
+
+# --------------------------------
 # DOCKER
 # --------------------------------
 # to install envsubst (gettext-base)
