@@ -18,9 +18,9 @@ RUN apt-get -y update  && \
 #ADD debian-docker.gpg ./  
 #RUN apt-key add ./debian-docker.gpg  
 
-# RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -  
-ADD gpg .
-RUN apt-key add gpg && rm -f gpg
+RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -  
+#ADD gpg .
+#RUN apt-key add gpg && rm -f gpg
 # check 9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88 
 RUN apt-key fingerprint 0EBFCD88 
 
