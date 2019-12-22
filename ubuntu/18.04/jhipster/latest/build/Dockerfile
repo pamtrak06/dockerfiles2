@@ -76,9 +76,6 @@ RUN apt-get update \
 # --------------------------------
 # JINJA2
 # --------------------------------
-RUN apt-get update \
-  && apt-get install -y jinja2 j2cli \
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/*
+RUN pip3 install jinja2 j2cli
 
 # USER jhipster
