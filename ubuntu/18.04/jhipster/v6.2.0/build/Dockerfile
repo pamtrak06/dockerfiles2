@@ -56,5 +56,24 @@ RUN usermod -aG docker root && \
 RUN curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && \
     chmod +x /usr/local/bin/docker-compose && \
     ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+    
+# --------------------------------
+# PYTHON 3
+# --------------------------------
+RUN apt-get update \
+  && apt-get install -y python3-pip python3-dev \
+  && cd /usr/local/bin \
+  && ln -s /usr/bin/python3 python \
+  && pip3 install --upgrade pip \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/*
+
+# --------------------------------
+# JINJA2
+# --------------------------------
+RUN apt-get update \
+  && apt-get install -y jinja2 j2cli \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/*
 
 # USER jhipster
